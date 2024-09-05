@@ -11,6 +11,10 @@ namespace XF1205_Insulation
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+
+            // 读取应用程序配置文件
+
+
             Application.Run(new MainForm());
         }
     }
