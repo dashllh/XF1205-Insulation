@@ -94,7 +94,7 @@
             btnGenerateReport.Location = new Point(520, 560);
             btnGenerateReport.Name = "btnGenerateReport";
             btnGenerateReport.Size = new Size(87, 36);
-            btnGenerateReport.TabIndex = 6;
+            btnGenerateReport.TabIndex = 23;
             btnGenerateReport.Text = "生成报告";
             btnGenerateReport.UseVisualStyleBackColor = true;
             btnGenerateReport.Click += btnGenerateReport_Click;
@@ -108,7 +108,7 @@
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(441, 88);
-            groupBox1.TabIndex = 7;
+            groupBox1.TabIndex = 26;
             groupBox1.TabStop = false;
             groupBox1.Text = "环境信息";
             // 
@@ -117,7 +117,7 @@
             txtLabHumidity.Location = new Point(347, 36);
             txtLabHumidity.Name = "txtLabHumidity";
             txtLabHumidity.Size = new Size(80, 23);
-            txtLabHumidity.TabIndex = 10;
+            txtLabHumidity.TabIndex = 1;
             txtLabHumidity.TextAlign = HorizontalAlignment.Center;
             // 
             // txtLabTemp
@@ -125,7 +125,7 @@
             txtLabTemp.Location = new Point(126, 36);
             txtLabTemp.Name = "txtLabTemp";
             txtLabTemp.Size = new Size(74, 23);
-            txtLabTemp.TabIndex = 8;
+            txtLabTemp.TabIndex = 0;
             txtLabTemp.TextAlign = HorizontalAlignment.Center;
             // 
             // label2
@@ -159,7 +159,7 @@
             groupBox2.Location = new Point(12, 112);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(441, 146);
-            groupBox2.TabIndex = 11;
+            groupBox2.TabIndex = 27;
             groupBox2.TabStop = false;
             groupBox2.Text = "样品信息";
             // 
@@ -168,7 +168,7 @@
             txtProductPrepareTime.Location = new Point(94, 98);
             txtProductPrepareTime.Name = "txtProductPrepareTime";
             txtProductPrepareTime.Size = new Size(333, 23);
-            txtProductPrepareTime.TabIndex = 13;
+            txtProductPrepareTime.TabIndex = 5;
             // 
             // label3
             // 
@@ -184,7 +184,7 @@
             txtProductName.Location = new Point(94, 29);
             txtProductName.Name = "txtProductName";
             txtProductName.Size = new Size(333, 23);
-            txtProductName.TabIndex = 11;
+            txtProductName.TabIndex = 2;
             // 
             // lblProductName
             // 
@@ -200,14 +200,14 @@
             txtTestId.Location = new Point(318, 63);
             txtTestId.Name = "txtTestId";
             txtTestId.Size = new Size(109, 23);
-            txtTestId.TabIndex = 9;
+            txtTestId.TabIndex = 4;
             // 
             // txtSampleId
             // 
             txtSampleId.Location = new Point(94, 63);
             txtSampleId.Name = "txtSampleId";
             txtSampleId.Size = new Size(106, 23);
-            txtSampleId.TabIndex = 8;
+            txtSampleId.TabIndex = 3;
             txtSampleId.Leave += txtSampleId_Leave;
             // 
             // lblTestId
@@ -241,7 +241,7 @@
             groupBox3.Location = new Point(475, 12);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(240, 183);
-            groupBox3.TabIndex = 12;
+            groupBox3.TabIndex = 31;
             groupBox3.TabStop = false;
             groupBox3.Text = "试验信息";
             // 
@@ -250,7 +250,7 @@
             txtTestAccord.Location = new Point(96, 72);
             txtTestAccord.Name = "txtTestAccord";
             txtTestAccord.Size = new Size(123, 23);
-            txtTestAccord.TabIndex = 23;
+            txtTestAccord.TabIndex = 13;
             txtTestAccord.Text = "XF 1025-2014";
             // 
             // label7
@@ -267,7 +267,7 @@
             txtOperator.Location = new Point(96, 144);
             txtOperator.Name = "txtOperator";
             txtOperator.Size = new Size(123, 23);
-            txtOperator.TabIndex = 19;
+            txtOperator.TabIndex = 15;
             // 
             // label6
             // 
@@ -283,7 +283,7 @@
             txtTestDate.Location = new Point(96, 108);
             txtTestDate.Name = "txtTestDate";
             txtTestDate.Size = new Size(123, 23);
-            txtTestDate.TabIndex = 17;
+            txtTestDate.TabIndex = 14;
             // 
             // label5
             // 
@@ -299,7 +299,7 @@
             txtRptNo.Location = new Point(96, 36);
             txtRptNo.Name = "txtRptNo";
             txtRptNo.Size = new Size(123, 23);
-            txtRptNo.TabIndex = 15;
+            txtRptNo.TabIndex = 12;
             // 
             // label4
             // 
@@ -321,7 +321,7 @@
             groupBox4.Location = new Point(12, 270);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(441, 112);
-            groupBox4.TabIndex = 13;
+            groupBox4.TabIndex = 28;
             groupBox4.TabStop = false;
             groupBox4.Text = "设备信息";
             // 
@@ -330,7 +330,7 @@
             txtApparatusCheckDate.Location = new Point(94, 68);
             txtApparatusCheckDate.Name = "txtApparatusCheckDate";
             txtApparatusCheckDate.Size = new Size(333, 23);
-            txtApparatusCheckDate.TabIndex = 14;
+            txtApparatusCheckDate.TabIndex = 8;
             // 
             // label15
             // 
@@ -346,7 +346,7 @@
             txtApparatusId.Location = new Point(318, 31);
             txtApparatusId.Name = "txtApparatusId";
             txtApparatusId.Size = new Size(109, 23);
-            txtApparatusId.TabIndex = 17;
+            txtApparatusId.TabIndex = 7;
             // 
             // label9
             // 
@@ -362,7 +362,7 @@
             txtApparatusName.Location = new Point(94, 31);
             txtApparatusName.Name = "txtApparatusName";
             txtApparatusName.Size = new Size(150, 23);
-            txtApparatusName.TabIndex = 25;
+            txtApparatusName.TabIndex = 6;
             // 
             // label8
             // 
@@ -390,7 +390,7 @@
             groupBox5.Location = new Point(475, 208);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(240, 258);
-            groupBox5.TabIndex = 14;
+            groupBox5.TabIndex = 32;
             groupBox5.TabStop = false;
             groupBox5.Text = "测试值";
             // 
@@ -399,7 +399,7 @@
             txtMinValue.Location = new Point(105, 213);
             txtMinValue.Name = "txtMinValue";
             txtMinValue.Size = new Size(114, 23);
-            txtMinValue.TabIndex = 23;
+            txtMinValue.TabIndex = 21;
             txtMinValue.TextAlign = HorizontalAlignment.Center;
             // 
             // label16
@@ -416,8 +416,9 @@
             txtPos3Value.Location = new Point(105, 108);
             txtPos3Value.Name = "txtPos3Value";
             txtPos3Value.Size = new Size(114, 23);
-            txtPos3Value.TabIndex = 21;
+            txtPos3Value.TabIndex = 18;
             txtPos3Value.TextAlign = HorizontalAlignment.Center;
+            txtPos3Value.Leave += txtPos3Value_Leave;
             // 
             // label14
             // 
@@ -433,8 +434,9 @@
             txtPos5Value.Location = new Point(105, 177);
             txtPos5Value.Name = "txtPos5Value";
             txtPos5Value.Size = new Size(114, 23);
-            txtPos5Value.TabIndex = 19;
+            txtPos5Value.TabIndex = 20;
             txtPos5Value.TextAlign = HorizontalAlignment.Center;
+            txtPos5Value.Leave += txtPos5Value_Leave;
             // 
             // label13
             // 
@@ -452,6 +454,7 @@
             txtPos2Value.Size = new Size(114, 23);
             txtPos2Value.TabIndex = 17;
             txtPos2Value.TextAlign = HorizontalAlignment.Center;
+            txtPos2Value.Leave += txtPos2Value_Leave;
             // 
             // label12
             // 
@@ -467,8 +470,9 @@
             txtPos4Value.Location = new Point(105, 144);
             txtPos4Value.Name = "txtPos4Value";
             txtPos4Value.Size = new Size(114, 23);
-            txtPos4Value.TabIndex = 15;
+            txtPos4Value.TabIndex = 19;
             txtPos4Value.TextAlign = HorizontalAlignment.Center;
+            txtPos4Value.Leave += txtPos4Value_Leave;
             // 
             // label11
             // 
@@ -484,8 +488,9 @@
             txtPos1Value.Location = new Point(105, 39);
             txtPos1Value.Name = "txtPos1Value";
             txtPos1Value.Size = new Size(114, 23);
-            txtPos1Value.TabIndex = 14;
+            txtPos1Value.TabIndex = 16;
             txtPos1Value.TextAlign = HorizontalAlignment.Center;
+            txtPos1Value.Leave += txtPos1Value_Leave;
             // 
             // label10
             // 
@@ -504,7 +509,7 @@
             groupBox6.Location = new Point(12, 393);
             groupBox6.Name = "groupBox6";
             groupBox6.Size = new Size(441, 73);
-            groupBox6.TabIndex = 26;
+            groupBox6.TabIndex = 29;
             groupBox6.TabStop = false;
             groupBox6.Text = "试验结论";
             // 
@@ -514,7 +519,7 @@
             rdoRefuse.Location = new Point(126, 29);
             rdoRefuse.Name = "rdoRefuse";
             rdoRefuse.Size = new Size(140, 21);
-            rdoRefuse.TabIndex = 27;
+            rdoRefuse.TabIndex = 10;
             rdoRefuse.TabStop = true;
             rdoRefuse.Text = "不符合要求,补充说明:";
             rdoRefuse.UseVisualStyleBackColor = true;
@@ -525,7 +530,7 @@
             rdoPass.Location = new Point(29, 28);
             rdoPass.Name = "rdoPass";
             rdoPass.Size = new Size(74, 21);
-            rdoPass.TabIndex = 26;
+            rdoPass.TabIndex = 9;
             rdoPass.TabStop = true;
             rdoPass.Text = "符合要求";
             rdoPass.UseVisualStyleBackColor = true;
@@ -535,14 +540,14 @@
             txtRefuseValue.Location = new Point(272, 28);
             txtRefuseValue.Name = "txtRefuseValue";
             txtRefuseValue.Size = new Size(155, 23);
-            txtRefuseValue.TabIndex = 25;
+            txtRefuseValue.TabIndex = 11;
             // 
             // btnCloseForm
             // 
             btnCloseForm.Location = new Point(628, 560);
             btnCloseForm.Name = "btnCloseForm";
             btnCloseForm.Size = new Size(87, 36);
-            btnCloseForm.TabIndex = 27;
+            btnCloseForm.TabIndex = 24;
             btnCloseForm.Text = "关闭";
             btnCloseForm.UseVisualStyleBackColor = true;
             btnCloseForm.Click += btnCloseForm_Click;
@@ -552,7 +557,7 @@
             btnClearInput.Location = new Point(13, 560);
             btnClearInput.Name = "btnClearInput";
             btnClearInput.Size = new Size(87, 36);
-            btnClearInput.TabIndex = 28;
+            btnClearInput.TabIndex = 25;
             btnClearInput.Text = "重置输入";
             btnClearInput.UseVisualStyleBackColor = true;
             btnClearInput.Click += btnClearInput_Click;
@@ -563,7 +568,7 @@
             groupBox7.Location = new Point(13, 478);
             groupBox7.Name = "groupBox7";
             groupBox7.Size = new Size(702, 64);
-            groupBox7.TabIndex = 29;
+            groupBox7.TabIndex = 30;
             groupBox7.TabStop = false;
             groupBox7.Text = "备注";
             // 
@@ -572,7 +577,7 @@
             txtMemo.Location = new Point(28, 25);
             txtMemo.Name = "txtMemo";
             txtMemo.Size = new Size(655, 23);
-            txtMemo.TabIndex = 0;
+            txtMemo.TabIndex = 22;
             // 
             // TestRecordForm
             // 

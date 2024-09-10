@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraRichEdit;
 using DevExpress.XtraRichEdit.API.Native;
+using DevExpress.XtraSpreadsheet.Model;
 using System.Text.Json;
 using XF1205_Insulation.Model;
 
@@ -14,68 +15,99 @@ namespace XF1205_Insulation
 
         private void btnGenerateReport_Click(object sender, EventArgs e)
         {
+            if (txtSampleId.Text == string.Empty)
+            {
+                MessageBox.Show("样品编号不能为空。", "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSampleId.Focus();
+                return;
+            }
+
+            if (txtTestId.Text == string.Empty)
+            {
+                MessageBox.Show("样品标识号不能为空。", "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTestId.Focus();
+                return;
+            }
+            /* 创建本地存储目录 */
+            string prodpath = $"D:\\XF 1205-2014 Insulation\\{txtSampleId.Text}";
+            string smppath = $"{prodpath}\\{txtTestId.Text}";
+            string datapath = $"{smppath}\\data";
+            string rptpath = $"{smppath}\\report";
+
+            try
+            {
+                /* 创建本次试验结果文件的存储目录 */
+                //试验样品根目录
+                Directory.CreateDirectory(prodpath);
+                //本次试验根目录
+                Directory.CreateDirectory(smppath);
+                //本次试验原始数据目录
+                Directory.CreateDirectory(datapath);
+                //本次试验报表目录
+                Directory.CreateDirectory(rptpath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                throw;
+            }
+
             using (var wordProcessor = new RichEditDocumentServer())
             {
-                wordProcessor.LoadDocument(@"E:\\test.docx");
+                // 加载报表模板
+                wordProcessor.LoadDocument(@"D:\\XF 1205-2014 Insulation\\template.docx");
 
                 DevExpress.XtraRichEdit.API.Native.Document document = wordProcessor.Document;
 
                 // 检验日期
-                document.InsertText(document.CreatePosition(422), txtTestDate.Text);
+                document.Replace(document.FindAll("[testdate]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtTestDate.Text);
                 // 检验人员
-                document.InsertText(document.CreatePosition(308), txtOperator.Text);
+                document.Replace(document.FindAll("[operator]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtOperator.Text);
                 // 设置实验室湿度
-                document.InsertText(document.CreatePosition(141), txtLabHumidity.Text);
+                document.Replace(document.FindAll("[humidity]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtLabHumidity.Text);
                 // 设置实验室温度
-                document.InsertText(document.CreatePosition(100), txtLabTemp.Text);
+                document.Replace(document.FindAll("[labtemp]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtLabTemp.Text);
                 // 设置报告编号
-                document.InsertText(document.CreatePosition(62), txtRptNo.Text);
-                
-                // 设置表格数据
-                Table table = document.Tables[0];
-                table.BeginUpdate();
-
+                document.Replace(document.FindAll("[rptno]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtRptNo.Text);
                 // 样品名称
-                document.InsertSingleLineText(table[0, 1].Range.Start, txtProductName.Text);
+                document.Replace(document.FindAll("[productname]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtProductName.Text);
                 // 样品编号
-                document.InsertSingleLineText(table[0, 3].Range.Start, txtSampleId.Text);
+                document.Replace(document.FindAll("[sampleid]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtSampleId.Text);
                 // 样品标识号
-                document.InsertSingleLineText(table[1, 3].Range.Start, txtTestId.Text);
+                document.Replace(document.FindAll("[testid]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtTestId.Text);
                 // 检验依据
-                document.InsertSingleLineText(table[2, 3].Range.Start, txtTestAccord.Text);
+                document.Replace(document.FindAll("[testaccord]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtTestAccord.Text);
                 // 样品养护时间
-                document.InsertSingleLineText(table[3, 3].Range.Start, txtProductPrepareTime.Text);
+                document.Replace(document.FindAll("[productpreparetime]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtProductPrepareTime.Text);
                 // 设备检定时间
-                document.InsertSingleLineText(table[4, 1].Range.Start, txtApparatusCheckDate.Text);
+                document.Replace(document.FindAll("[apparatuscheckdate]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtApparatusCheckDate.Text);
                 // 设备编号
-                document.InsertSingleLineText(table[4, 3].Range.Start, txtApparatusId.Text);
+                document.Replace(document.FindAll("[apparatusid]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtApparatusId.Text);
                 // 测试值1-5
-                document.InsertSingleLineText(table[8, 1].Range.Start, txtPos1Value.Text);
-                document.InsertSingleLineText(table[8, 2].Range.Start, txtPos2Value.Text);
-                document.InsertSingleLineText(table[8, 3].Range.Start, txtPos3Value.Text);
-                document.InsertSingleLineText(table[8, 4].Range.Start, txtPos4Value.Text);
-                document.InsertSingleLineText(table[8, 5].Range.Start, txtPos5Value.Text);
+                document.Replace(document.FindAll("[data1]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtPos1Value.Text);
+                document.Replace(document.FindAll("[data2]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtPos2Value.Text);
+                document.Replace(document.FindAll("[data3]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtPos3Value.Text);
+                document.Replace(document.FindAll("[data4]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtPos4Value.Text);
+                document.Replace(document.FindAll("[data5]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtPos5Value.Text);
                 // 测试值最小值
-                document.InsertSingleLineText(table[8, 6].Range.Start, txtMinValue.Text);
+                document.Replace(document.FindAll("[mindata]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtMinValue.Text);
                 // 试验结论
-                if(rdoPass.Checked) // 符合要求
-                {       
-                    document.InsertText(table[8, 7].Range.Start, "■ 符合要求 \r□ 不符合要求");                    
-                } 
+                if (rdoPass.Checked) // 符合要求
+                {
+                    document.Replace(document.FindAll("[result]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], "■ 符合要求 \r□ 不符合要求");
+                }
                 else if (rdoRefuse.Checked) // 不符合要求
                 {
-                    document.InsertText(table[8, 7].Range.Start, "□ 符合要求 \r■ " + txtRefuseValue.Text + ",不符合要求");
+                    document.Replace(document.FindAll("[result]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], "□ 符合要求 \r■ " + txtRefuseValue.Text + ",不符合要求");
                 }
                 // 备注
-                document.InsertSingleLineText(table[9, 1].Range.Start, txtMemo.Text);
+                document.Replace(document.FindAll("[memo]", DevExpress.XtraRichEdit.API.Native.SearchOptions.WholeWord)[0], txtMemo.Text);
 
-                table.EndUpdate();
-
-                wordProcessor.SaveDocument(@"E:\\mytest.docx", DocumentFormat.OpenXml);
+                wordProcessor.SaveDocument($"{rptpath}\\report.docx", DocumentFormat.OpenXml);
             }
-            MessageBox.Show("保存报表成功!");
+            MessageBox.Show("生成报告成功!", "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        
+
         private void btnClearInput_Click(object sender, EventArgs e)
         {
             /* 重置试验相关信息 */
@@ -112,13 +144,13 @@ namespace XF1205_Insulation
                 txtApparatusName.Text = defaultValue.ApparatusName;
                 // 设备检定日期
                 txtApparatusCheckDate.Text = defaultValue.ApparatusCheckDate;
-            } 
+            }
             else
             {
                 // 实验室温度
                 txtLabTemp.Text = "25";
                 // 实验室湿度
-                txtLabHumidity.Text = "80";                
+                txtLabHumidity.Text = "80";
                 // 检验标准
                 txtTestAccord.Text = "XF 1025-2014";
                 // 设备编号
@@ -140,6 +172,48 @@ namespace XF1205_Insulation
         private void btnCloseForm_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void CaculateMinData()
+        {
+            // 计算并填写测试数据的最小值
+            double val1 = 0;
+            double val2 = 0;
+            double val3 = 0;
+            double val4 = 0;
+            double val5 = 0;
+            double minval = 0;
+            Double.TryParse(txtPos1Value.Text, out val1);
+            Double.TryParse(txtPos2Value.Text, out val2);
+            Double.TryParse(txtPos3Value.Text, out val3);
+            Double.TryParse(txtPos4Value.Text, out val4);
+            Double.TryParse(txtPos5Value.Text, out val5);
+            minval = Math.Min(val1, Math.Min(val2, Math.Min(val3, Math.Min(val4, val5))));
+            txtMinValue.Text = minval.ToString();
+        }
+
+        private void txtPos1Value_Leave(object sender, EventArgs e)
+        {
+            CaculateMinData();
+        }
+
+        private void txtPos2Value_Leave(object sender, EventArgs e)
+        {
+            CaculateMinData();
+        }
+
+        private void txtPos3Value_Leave(object sender, EventArgs e)
+        {
+            CaculateMinData();
+        }
+
+        private void txtPos4Value_Leave(object sender, EventArgs e)
+        {
+            CaculateMinData();
+        }
+        private void txtPos5Value_Leave(object sender, EventArgs e)
+        {
+            CaculateMinData();
         }
     }
 }
