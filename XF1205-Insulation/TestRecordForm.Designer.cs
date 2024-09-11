@@ -35,6 +35,8 @@
             label2 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
+            label18 = new Label();
+            label17 = new Label();
             txtProductPrepareTime = new TextBox();
             label3 = new Label();
             txtProductName = new TextBox();
@@ -148,6 +150,8 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(label18);
+            groupBox2.Controls.Add(label17);
             groupBox2.Controls.Add(txtProductPrepareTime);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(txtProductName);
@@ -162,6 +166,28 @@
             groupBox2.TabIndex = 27;
             groupBox2.TabStop = false;
             groupBox2.Text = "样品信息";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.ForeColor = Color.Red;
+            label18.Location = new Point(18, 67);
+            label18.Name = "label18";
+            label18.Size = new Size(13, 17);
+            label18.TabIndex = 14;
+            label18.Text = "*";
+            label18.TextAlign = ContentAlignment.BottomRight;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.ForeColor = Color.Red;
+            label17.Location = new Point(230, 67);
+            label17.Name = "label17";
+            label17.Size = new Size(13, 17);
+            label17.TabIndex = 13;
+            label17.Text = "*";
+            label17.TextAlign = ContentAlignment.BottomRight;
             // 
             // txtProductPrepareTime
             // 
@@ -197,14 +223,14 @@
             // 
             // txtTestId
             // 
-            txtTestId.Location = new Point(318, 63);
+            txtTestId.Location = new Point(318, 64);
             txtTestId.Name = "txtTestId";
             txtTestId.Size = new Size(109, 23);
             txtTestId.TabIndex = 4;
             // 
             // txtSampleId
             // 
-            txtSampleId.Location = new Point(94, 63);
+            txtSampleId.Location = new Point(94, 64);
             txtSampleId.Name = "txtSampleId";
             txtSampleId.Size = new Size(106, 23);
             txtSampleId.TabIndex = 3;
@@ -213,7 +239,7 @@
             // lblTestId
             // 
             lblTestId.AutoSize = true;
-            lblTestId.Location = new Point(241, 66);
+            lblTestId.Location = new Point(241, 67);
             lblTestId.Name = "lblTestId";
             lblTestId.Size = new Size(71, 17);
             lblTestId.TabIndex = 7;
@@ -222,7 +248,7 @@
             // lblSampleId
             // 
             lblSampleId.AutoSize = true;
-            lblSampleId.Location = new Point(29, 66);
+            lblSampleId.Location = new Point(29, 67);
             lblSampleId.Name = "lblSampleId";
             lblSampleId.Size = new Size(59, 17);
             lblSampleId.TabIndex = 6;
@@ -671,5 +697,7 @@
         private TextBox txtMemo;
         private TextBox txtApparatusCheckDate;
         private Label label15;
+        private Label label18;
+        private Label label17;
     }
 }
