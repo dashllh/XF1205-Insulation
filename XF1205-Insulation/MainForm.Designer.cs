@@ -109,7 +109,6 @@ namespace XF1205_Insulation
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "灭火毯绝缘性能试验系统  版本 2.0";
-            TopMost = true;
             ResumeLayout(false);
         }
 
