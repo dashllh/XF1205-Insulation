@@ -112,7 +112,32 @@ namespace XF1205_Insulation
         {
             /* 重置试验相关信息 */
 
-            // 
+            // 样品编号
+            txtSampleId.Text = string.Empty;
+            // 样品标识号
+            txtTestId.Text = string.Empty;
+            // 报告编号
+            txtRptNo.Text = string.Empty;
+            // 样品名称
+            txtProductName.Text = string.Empty;
+            // 养护时间
+            txtProductPrepareTime.Text = string.Empty;
+            // 试验结论补充说明
+            txtRefuseValue.Text = string.Empty;
+            // 备注
+            txtMemo.Text = string.Empty;
+            // 试验日期
+            txtTestDate.Text = string.Empty;
+            // 试验人员
+            txtOperator.Text = string.Empty;
+            // 点位1-5记录值
+            txtPos1Value.Text = string.Empty;
+            txtPos2Value.Text = string.Empty;
+            txtPos3Value.Text = string.Empty;
+            txtPos4Value.Text = string.Empty;
+            txtPos5Value.Text = string.Empty;
+            // 记录值最小值
+            txtMinValue.Text = string.Empty;
         }
 
         private void TestRecordForm_Load(object sender, EventArgs e)
