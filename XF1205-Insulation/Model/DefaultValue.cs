@@ -14,5 +14,8 @@ namespace XF1205_Insulation.Model
         public string ApparatusId { get; set; } = string.Empty;
         public string ApparatusCheckDate { get; set; } = string.Empty;
         public string TestAccord { get; set; } = string.Empty;
+        public string ProductName {  get; set; } = string.Empty;
+        public string SamplePrepareTime { get; set; } = string.Empty;
+        public string Operator { get; set; } = string.Empty;
     }
 }

@@ -169,6 +169,12 @@ namespace XF1205_Insulation
                 txtApparatusName.Text = defaultValue.ApparatusName;
                 // 设备检定日期
                 txtApparatusCheckDate.Text = defaultValue.ApparatusCheckDate;
+                // 样品名称
+                txtProductName.Text = defaultValue.ProductName;
+                // 养护日期
+                txtProductPrepareTime.Text = defaultValue.SamplePrepareTime;
+                // 试验人员
+                txtOperator.Text = defaultValue.Operator;
             }
             else
             {
